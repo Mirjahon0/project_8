@@ -1,0 +1,22 @@
+{% extends 'main/base.html' %}  
+{% load static %}  
+{% block content %}
+    <div class="card" style="width: 18rem;">
+    <form method='POST'>
+        {% csrf_token %}
+        <label for= 'name'></label>
+        <input id= 'name' placeholder='Name' name='name' value='{{chairs.name}}'> <br>
+        
+        
+        <label for= 'price'></label>
+        <input id= 'price' placeholder='price' name='price' value='chairs.price'> <br>
+        
+        
+        <label for= 'prices'></label>
+        <input id= 'prices' placeholder='Prices' name='prices' value='chairs.prices'>  <br>
+        <button type="submit">update </button>
+    </form>
+    </div>
+
+
+{% endblock %}

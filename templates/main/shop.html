@@ -1,0 +1,62 @@
+{% extends 'main/base.html' %}  
+{% load static %}  
+{% block content %}
+		<div class="untree_co-section product-section before-footer-section">
+		    <div class="container">
+		      	<div class="row">
+					<form>
+                        {% csrf_token %}
+						<input type="text" placeholder="search" name="search" value="{{result}}">
+                        <button type="submit">search</button>
+					</form>	
+					{% for chair in chairs %}
+					<div class="col-12 col-md-4 col-lg-3 mb-5">
+						<a class="product-item" href="{% url 'shop-detail' chair.id %}">
+							<img src="{{chair.image.url}}" class="img-fluid product-thumbnail">
+							<h3 class="product-title">{{chair.name}}</h3>
+							<strong class="product-price">{{chair.prices}}{{chair.price}}</strong>
+
+							<span class="icon-cross">
+								<img src="images/cross.svg" class="img-fluid">
+							</span>
+						</a>
+					</div>
+					{% endfor %}
+                </div>
+		    </div>
+		</div>
+
+
+		<!-- Start Footer Section -->
+		<footer class="footer-section">
+			<div class="container relative">
+
+				<div class="sofa-img">
+					<img src="images/sofa.png" alt="Image" class="img-fluid">
+				</div>
+
+				<div class="row">
+					<div class="col-lg-8">
+						<div class="subscription-form">
+							<h3 class="d-flex align-items-center"><span class="me-1"><img src="images/envelope-outline.svg" alt="Image" class="img-fluid"></span><span>Subscribe to Newsletter</span></h3>
+
+							<form action="#" class="row g-3">
+								<div class="col-auto">
+									<input type="text" class="form-control" placeholder="Enter your name">
+								</div>
+								<div class="col-auto">
+									<input type="email" class="form-control" placeholder="Enter your email">
+								</div>
+								<div class="col-auto">
+									<button class="btn btn-primary">
+										<span class="fa fa-paper-plane"></span>
+									</button>
+								</div>
+							</form>
+
+						</div>
+					</div>
+				</div>
+
+				
+{% endblock %}

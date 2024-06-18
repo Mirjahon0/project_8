@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}  
+{% load static %}  
+{% block content %}
+    <div class="card" style="width: 18rem;">
+        <img src="{{recent_blog.image.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h3>{{recent_blog.title}}</h3>
+            <h5>{{recent_blog.owner}}</h5>
+        </div>
+            <a href="{% url 'blog-update' recent_blog.id %}">Update</a>
+            <a href="{% url 'blog-delete' recent_blog.id %}">Delete</a>
+    </div>
+
+
+{% endblock %}

@@ -1,0 +1,22 @@
+<form role="form" id="user_form" method="post"
+action="/appname/register" enctype="multipart/form-data">
+    {% csrf_token %}
+    {% if registered %}
+        <strong>Thank you for registering! Check your email and confirm registration.
+       </strong>
+    {% else %}
+        <div class="form-group">
+            <label for="register-username" style="color: rgba(255, 255, 0, 0.68);font-weight: 500;">
+                <i class="icon-user"></i>
+                <b>Email</b>
+            </label>
+            <input class="form-control" id="register-username" type="text" placeholder="" required>
+        </div>
+        <div class="form-group" style="color: rgba(255, 255, 0, 0.68);font-weight: 500;">
+            <label for="register-password">
+                <i class="icon-lock"></i>
+                <b>Password</b>
+            </label>
+            <input class="form-control" id="register-password" type="password" placeholder="" required>
+        </div>
+</form>

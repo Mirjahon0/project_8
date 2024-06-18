@@ -1,0 +1,15 @@
+{% extends 'main/base.html' %}  
+{% load static %}  
+{% block content %}
+    <div class="card" style="width: 18rem;">
+        <img src="{{chairs.image.url}}" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h3>{{chairs.name}}</h3>
+            <h5>{{chairs.prices}}{{chairs.price}}</h5>
+        </div>
+            <a href="{% url 'shop-update' chairs.id %}">Update</a>
+            <a href="{% url 'shop-delete' chairs.id %}">Delete</a>
+    </div>
+
+
+{% endblock %}
